@@ -53,3 +53,5 @@ go_chart->init_display( ).
 
 ## polar chart
 ![example polar chart](docs/images/example3.png "Example Chart 3")
+
+## credits to https://www.chartjs.org/
