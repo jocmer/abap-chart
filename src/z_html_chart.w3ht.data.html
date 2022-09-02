@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        * { margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; }
+        canvas { display: block; }
+    </style>
+    <script src="chart.min.js"></script>
+</head>
+
+<body>
+    <canvas id="myChart"
+        data-type='<!-- CHART_TYPE -->'
+        data-labels='<!-- LABELS -->'
+        data-datasets='<!-- DATASETS -->'
+        data-options='<!-- OPTIONS -->'
+    >
+
+    </canvas>
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        const chartType = ctx.getAttribute("data-type");
+        const labels = JSON.parse(ctx.getAttribute("data-labels"));
+        const datasets = JSON.parse(ctx.getAttribute("data-datasets"));
+        const options = JSON.parse(ctx.getAttribute("data-options"));
+
+        const myChart = new Chart(ctx, {
+            type: chartType,
+            data: {
+                labels: labels,
+                datasets: datasets
+            },
+            options: options
+        });
+    </script>
+</body>
+
+</html>

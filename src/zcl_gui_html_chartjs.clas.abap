@@ -347,14 +347,14 @@ CLASS ZCL_GUI_HTML_CHARTJS IMPLEMENTATION.
     DATA: lv_doc_url(80).
     CALL METHOD me->load_html_document
       EXPORTING
-        document_id  = 'Z_HTML_CHARTJS'
+        document_id  = 'Z_HTML_CHART'
       IMPORTING
         assigned_url = lv_doc_url
       EXCEPTIONS
         OTHERS       = 1.
 
     DATA: lv_key TYPE wwwdatatab.
-    lv_key = 'HTZ_HTML_CHARTJS'.
+    lv_key = 'HTZ_HTML_CHART'.
 
     DATA: lt_html TYPE TABLE OF w3html.
     CALL FUNCTION 'WWWDATA_IMPORT'
